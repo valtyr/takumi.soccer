@@ -1,0 +1,54 @@
+.playerRoot {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.playerLoser {
+  opacity: 0.5;
+}
+
+.playerImage {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+  border-radius: 1000px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.13);
+}
+
+.playerImageContainer {
+  position: relative;
+  margin-right: 20px;
+}
+
+.playerImageEmoji {
+  position: absolute;
+  bottom: 0px;
+  right: -10px;
+  font-size: 20px;
+}
+
+.playerCountry {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.playerInfo {
+  flex: 1;
+}
+
+.playerName {
+  color: rgb(187, 187, 187);
+  font-weight: 300;
+}
+
+.playerScore {
+  font-size: 30px;
+  font-weight: 600;
+  margin-right: 25px;
+}

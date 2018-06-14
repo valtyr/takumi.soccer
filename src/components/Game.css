@@ -1,0 +1,64 @@
+.gameRoot {
+  border: 1px solid rgb(229, 241, 245);
+  padding: 10px;
+  margin: 15px;
+  border-radius: 5px;
+
+  display: flex;
+  position: relative;
+}
+
+.gameTeams {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.gameInfo {
+  width: 100px;
+  border-left: 1px solid rgb(229, 241, 245);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameDate {
+  font-size: 14px;
+  width: 75px;
+  text-align: center;
+  color: rgb(180, 180, 180);
+}
+
+.recordIndicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: rgb(214, 84, 76);
+  animation: inProgress 2s infinite;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+@keyframes inProgress {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.gameInProgress {
+  color: rgb(214, 84, 76);
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-style: italic;
+}

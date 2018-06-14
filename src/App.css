@@ -1,0 +1,33 @@
+.App {
+  padding: 10px;
+}
+
+h1 {
+  margin-left: 15px;
+  margin-top: 50px;
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+}
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.halfWidth {
+  width: 50%;
+}
+
+@media (max-width: 960px) {
+  .halfWidth {
+    width: 100%;
+  }
+}
+
+.footer {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 30px;
+}
