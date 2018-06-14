@@ -15,7 +15,7 @@ class App extends Component {
           <img src="/logo.svg" />
         </div>
         <Fetch
-          url="http://api.football-data.org/v1/competitions/467/fixtures"
+          url="https://api.football-data.org/v1/competitions/467/fixtures"
           options={{
             headers: {
               'X-Auth-Token': '87ac1b9b7b3a47049c389242122e3b3c',
