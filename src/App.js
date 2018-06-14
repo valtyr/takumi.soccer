@@ -22,9 +22,11 @@ class App extends Component {
             },
           }}
         >
-          {({loading, error, data}) => {
-            if (loading || !data) return 'Loading';
+          {({loading, error, data, fetch}) => {
+            if (!data) return 'Loading';
             if (error) return 'Error';
+
+            setTimeout(fetch, 90000);
 
             const games = data.fixtures.map(game => {
               if (game.homeTeamName === '' || game.awayTeamName === '') return game;
