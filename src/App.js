@@ -7,11 +7,7 @@ import './App.css';
 import Fetch from 'react-fetch-component';
 import {Player, Game} from './components';
 
-const FETCH_PROPS = {
-  url: 'https://api.football-data.org/v1/competitions/467/fixtures',
-  headers: {'X-Auth-Token': process.env.API_KEY},
-};
-const POLL_INTERVAL_SECONDS = 90;
+const POLL_INTERVAL_SECONDS = 20;
 
 class App extends Component {
   render() {
@@ -20,7 +16,7 @@ class App extends Component {
         <div className="header">
           <img src="/logo.svg" />
         </div>
-        <Fetch {...FETCH_PROPS}>
+        <Fetch url="https://proxy.takumi.soccer/?$url=http://api.football-data.org/v1/competitions/467/fixtures">
           {({loading, error, data, fetch}) => {
             if (!data) return 'Loading';
             if (error) return 'Error';
