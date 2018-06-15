@@ -10,6 +10,17 @@ import {Player, Game} from './components';
 const POLL_INTERVAL_SECONDS = 20;
 
 class App extends Component {
+  componentDidMount() {
+    this.fetchInterval = setInterval(() => {
+      if (!this.fetch) return;
+      this.fetch();
+    }, 5000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.fetchInterval);
+  }
+
   render() {
     return (
       <div className="App">
@@ -22,7 +33,7 @@ class App extends Component {
             if (error) return 'Error';
 
             // Dirty polling 😈
-            setTimeout(fetch, POLL_INTERVAL_SECONDS * 1000);
+            this.fetch = fetch;
 
             const games = data.fixtures.map(game => {
               if (game.homeTeamName === '' || game.awayTeamName === '') return game;
