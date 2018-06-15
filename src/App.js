@@ -29,8 +29,8 @@ class App extends Component {
         </div>
         <Fetch url="https://proxy.takumi.soccer/?$url=http://api.football-data.org/v1/competitions/467/fixtures">
           {({loading, error, data, fetch}) => {
-            if (!data) return 'Loading';
             if (error) return 'Error';
+            if (!data) return 'Loading';
 
             // Dirty polling 😈
             this.fetch = fetch;
