@@ -28,6 +28,17 @@ h1 {
 .footer {
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.footerSoccerBall {
   text-align: center;
   font-size: 30px;
+}
+
+.footerAuthor {
+  color: rgb(232, 232, 232);
+  font-style: 14px;
+  text-align: center;
+  display: block;
+  margin-bottom: 20px;
 }

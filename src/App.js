@@ -94,7 +94,12 @@ class App extends Component {
                 <h1>Final</h1>
                 <div>{final.map(game => <Game key={game.date} game={game} />)}</div>
 
-                <div className="footer">⚽️</div>
+                <div className="footer">
+                  <a className="footerAuthor" href="https://github.com/valtyr">
+                    github.com/valtyr
+                  </a>
+                  <div className="footerSoccerBall">⚽️</div>
+                </div>
               </div>
             );
           }}
