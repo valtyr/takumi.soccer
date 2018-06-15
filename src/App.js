@@ -7,6 +7,12 @@ import './App.css';
 import Fetch from 'react-fetch-component';
 import {Player, Game} from './components';
 
+const FETCH_PROPS = {
+  url: 'https://api.football-data.org/v1/competitions/467/fixtures',
+  headers: {'X-Auth-Token': process.env.API_KEY},
+};
+const POLL_INTERVAL_SECONDS = 90;
+
 class App extends Component {
   render() {
     return (
@@ -14,19 +20,13 @@ class App extends Component {
         <div className="header">
           <img src="/logo.svg" />
         </div>
-        <Fetch
-          url="https://api.football-data.org/v1/competitions/467/fixtures"
-          options={{
-            headers: {
-              'X-Auth-Token': '87ac1b9b7b3a47049c389242122e3b3c',
-            },
-          }}
-        >
+        <Fetch {...FETCH_PROPS}>
           {({loading, error, data, fetch}) => {
             if (!data) return 'Loading';
             if (error) return 'Error';
 
-            setTimeout(fetch, 90000);
+            // Dirty polling 😈
+            setTimeout(fetch, POLL_INTERVAL_SECONDS * 1000);
 
             const games = data.fixtures.map(game => {
               if (game.homeTeamName === '' || game.awayTeamName === '') return game;
